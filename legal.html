@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Legal — Pharmacy Management System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+  :root {
+    --ink:#241016; --ink-soft:#5A4750; --paper:#FAF6F2; --surface:#FFFFFF;
+    --line:#E8DFDA; --cherry:#B81E3A; --cherry-deep:#7C0F26;
+    --sage:#4F7A5C; --sage-bg:#E9F2EB; --amber:#A8631A; --amber-bg:#FBF0DE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; }
+
+  /* ── Header ── */
+  .site-header {
+    background: var(--ink); padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 50;
+  }
+  .site-header .brand { color: #fff; font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+  .site-header a.back { color: rgba(255,255,255,.6); font-size: 13px; font-weight: 600; text-decoration: none; }
+  .site-header a.back:hover { color: #fff; }
+
+  /* ── Tab nav ── */
+  .tab-bar {
+    background: var(--surface); border-bottom: 1.5px solid var(--ink);
+    display: flex; padding: 0 32px; gap: 0; position: sticky; top: 57px; z-index: 40;
+  }
+  .tab-btn {
+    padding: 14px 22px; font-size: 13px; font-weight: 700; cursor: pointer;
+    border: none; background: transparent; color: var(--ink-soft);
+    border-bottom: 2.5px solid transparent; margin-bottom: -1.5px;
+    font-family: 'Inter', sans-serif; letter-spacing: .01em; transition: color .12s;
+  }
+  .tab-btn.active { color: var(--cherry); border-bottom-color: var(--cherry); }
+  .tab-btn:hover:not(.active) { color: var(--ink); }
+
+  /* ── Content ── */
+  .content { max-width: 760px; margin: 0 auto; padding: 52px 32px 80px; }
+  .doc { display: none; }
+  .doc.visible { display: block; }
+
+  .doc-header { margin-bottom: 40px; padding-bottom: 28px; border-bottom: 1.5px solid var(--ink); }
+  .doc-header .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 10px; }
+  .doc-header h1 { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 700; line-height: 1.15; color: var(--ink); }
+  .doc-header .meta { margin-top: 12px; font-size: 12.5px; color: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; }
+
+  h2 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; margin: 44px 0 12px; color: var(--ink); }
+  h3 { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; margin: 24px 0 8px; color: var(--ink); text-transform: uppercase; letter-spacing: .06em; }
+  p { font-size: 14.5px; color: var(--ink); margin-bottom: 14px; }
+  ul, ol { padding-left: 20px; margin-bottom: 14px; }
+  li { font-size: 14.5px; color: var(--ink); margin-bottom: 6px; }
+  strong { font-weight: 700; }
+  a { color: var(--cherry); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    background: var(--amber-bg); border-left: 3px solid var(--amber);
+    padding: 14px 18px; border-radius: 0 4px 4px 0; margin: 20px 0;
+    font-size: 13.5px; color: var(--ink);
+  }
+  .section-divider { border: none; border-top: 1px solid var(--line); margin: 36px 0; }
+
+  /* ── Footer ── */
+  .site-footer { background: var(--ink); color: rgba(255,255,255,.5); text-align: center; padding: 28px 32px; font-size: 12px; }
+  .site-footer strong { color: #fff; }
+
+  @media (max-width: 600px) {
+    .site-header { padding: 14px 16px; }
+    .tab-bar { padding: 0 8px; }
+    .tab-btn { padding: 12px 14px; font-size: 12px; }
+    .content { padding: 32px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="#">💊 Pharmacy Management System</a>
+  <a class="back" href="/">← Back to app</a>
+</header>
+
+<nav class="tab-bar">
+  <button class="tab-btn active" onclick="showDoc('tos', this)">Terms of Service</button>
+  <button class="tab-btn" onclick="showDoc('privacy', this)">Privacy Policy</button>
+</nav>
+
+<main class="content">
+
+  <!-- ══════════════ TERMS OF SERVICE ══════════════ -->
+  <article class="doc visible" id="doc-tos">
+    <div class="doc-header">
+      <div class="eyebrow">Legal Agreement</div>
+      <h1>Terms of Service</h1>
+      <div class="meta">Effective date: 25 June 2026 &nbsp;·&nbsp; Last updated: 25 June 2026</div>
+    </div>
+
+    <div class="highlight-box">
+      Please read these Terms carefully before using the Pharmacy Management System. By accessing or using the platform, you agree to be bound by these Terms on behalf of yourself and the organisation you represent.
+    </div>
+
+    <h2>1. About the Platform</h2>
+    <p>The Pharmacy Management System ("Platform", "Service", "we", "us") is a cloud-based pharmacy operations tool that provides inventory management, point-of-sale billing, purchase order management, staff shift scheduling, sales reporting, and related features to licensed pharmacy businesses ("Clients").</p>
+    <p>The Platform is operated by the platform provider ("Provider"). Clients access the Platform on a subscription basis and may invite staff members ("Users") to use the Platform under the Client's account.</p>
+
+    <h2>2. Eligibility</h2>
+    <p>You may use the Platform only if:</p>
+    <ul>
+      <li>You are at least 18 years old and have the legal authority to enter into binding agreements;</li>
+      <li>Your organisation is a duly licensed pharmacy or healthcare business under the laws of your jurisdiction;</li>
+      <li>You are not prohibited from using the Service under applicable law.</li>
+    </ul>
+
+    <h2>3. Accounts and Access</h2>
+    <h3>3.1 Account Registration</h3>
+    <p>Clients must provide accurate and complete information when registering. You are responsible for maintaining the confidentiality of your login credentials and for all activity that occurs under your account.</p>
+    <h3>3.2 Staff Accounts</h3>
+    <p>Clients may create accounts for their staff. Each Client is solely responsible for ensuring their staff comply with these Terms and any applicable laws when using the Platform.</p>
+    <h3>3.3 Account Security</h3>
+    <p>You must notify us immediately of any unauthorised access to your account. We are not liable for losses resulting from unauthorised use of your credentials.</p>
+
+    <h2>4. Subscriptions and Payment</h2>
+    <h3>4.1 Subscription Plans</h3>
+    <p>Access to the Platform requires an active subscription. Subscription fees, billing cycles, and plan features are as agreed between the Provider and each Client at the time of onboarding.</p>
+    <h3>4.2 Payment</h3>
+    <p>Subscription fees are due in advance of each billing period. The Provider will notify Clients of the amount due and accepted payment methods. Failure to pay by the due date may result in suspension of access.</p>
+    <h3>4.3 Suspension for Non-Payment</h3>
+    <p>If payment is not received within the agreed period, the Provider may suspend the Client's access to the Platform. Data will be retained for a reasonable period after suspension to allow for reinstatement upon payment.</p>
+    <h3>4.4 Refunds</h3>
+    <p>Subscription fees are non-refundable except where required by applicable law or expressly agreed in writing by the Provider.</p>
+    <h3>4.5 Changes to Pricing</h3>
+    <p>The Provider may change subscription fees with at least 30 days' written notice. Continued use of the Platform after the notice period constitutes acceptance of the new fees.</p>
+
+    <h2>5. Acceptable Use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the Platform for any unlawful purpose or in violation of pharmacy regulations in your jurisdiction;</li>
+      <li>Attempt to gain unauthorised access to any part of the Platform or its infrastructure;</li>
+      <li>Reverse engineer, decompile, or copy any part of the Platform;</li>
+      <li>Upload or transmit malicious code, viruses, or harmful data;</li>
+      <li>Use the Platform to process data of patients who have not consented to such processing;</li>
+      <li>Resell or sublicense access to the Platform without prior written consent from the Provider.</li>
+    </ul>
+
+    <h2>6. Data Ownership</h2>
+    <p>All data you enter into the Platform ("Client Data") remains your property. The Provider does not claim ownership of Client Data. You grant the Provider a limited licence to store, process, and display Client Data solely for the purpose of providing the Service.</p>
+    <p>You are responsible for ensuring you have the right to submit all data you enter, including patient information, and that doing so complies with applicable data protection laws in your jurisdiction.</p>
+
+    <h2>7. Availability and Uptime</h2>
+    <p>The Provider will make reasonable efforts to keep the Platform available. However, the Service is provided "as is" and the Provider does not guarantee uninterrupted or error-free access. Scheduled maintenance will be communicated in advance where possible.</p>
+
+    <h2>8. Intellectual Property</h2>
+    <p>The Platform, including its design, code, features, and branding, is the intellectual property of the Provider. Nothing in these Terms transfers any intellectual property rights to you except the limited right to use the Platform during an active subscription period.</p>
+
+    <h2>9. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, the Provider shall not be liable for:</p>
+    <ul>
+      <li>Any indirect, incidental, or consequential loss arising from your use of the Platform;</li>
+      <li>Loss of data, revenue, or business resulting from Platform downtime or errors;</li>
+      <li>Any harm to patients arising from dispensing errors, incorrect data entry, or misuse of the Platform by your staff.</li>
+    </ul>
+    <p>The Platform is a management tool. It does not replace professional pharmacy judgement, and clinical decisions remain solely the responsibility of the licensed pharmacist.</p>
+
+    <h2>10. Termination</h2>
+    <p>Either party may terminate the subscription at the end of a billing period with reasonable notice. The Provider may terminate immediately for material breach of these Terms, including non-payment or misuse of the Platform.</p>
+    <p>Upon termination, Client Data will be available for export for 30 days, after which it may be permanently deleted.</p>
+
+    <h2>11. Governing Law</h2>
+    <p>These Terms are governed by the laws of the jurisdiction in which the Provider is registered. Any disputes shall first be resolved through good-faith negotiation before escalating to formal legal proceedings.</p>
+
+    <h2>12. Changes to These Terms</h2>
+    <p>The Provider may update these Terms from time to time. Clients will be notified of material changes. Continued use of the Platform after notification constitutes acceptance of the revised Terms.</p>
+
+    <h2>13. Contact</h2>
+    <p>For questions about these Terms, contact the platform provider through the communication channel used at onboarding.</p>
+  </article>
+
+  <!-- ══════════════ PRIVACY POLICY ══════════════ -->
+  <article class="doc" id="doc-privacy">
+    <div class="doc-header">
+      <div class="eyebrow">Data &amp; Privacy</div>
+      <h1>Privacy Policy</h1>
+      <div class="meta">Effective date: 25 June 2026 &nbsp;·&nbsp; Last updated: 25 June 2026</div>
+    </div>
+
+    <div class="highlight-box">
+      This Policy explains what data we collect, why we collect it, how it is stored and protected, and what rights you have over it. We handle pharmacy and patient data with the care that sensitive health information demands.
+    </div>
+
+    <h2>1. Who This Policy Covers</h2>
+    <p>This Privacy Policy applies to:</p>
+    <ul>
+      <li><strong>Clients</strong> — pharmacy businesses that subscribe to the Platform;</li>
+      <li><strong>Users</strong> — staff members who access the Platform under a Client's account;</li>
+      <li><strong>Patients</strong> — individuals whose data is entered into the Platform by pharmacy staff during the course of dispensing.</li>
+    </ul>
+    <p>The Provider acts as a <strong>data processor</strong> on behalf of Clients. Clients are the <strong>data controllers</strong> responsible for ensuring they have lawful grounds to process patient data and that they comply with applicable data protection legislation in their jurisdiction (including but not limited to GDPR, HIPAA, POPIA, or local health data regulations).</p>
+
+    <h2>2. Data We Collect</h2>
+    <h3>2.1 Account and Profile Data</h3>
+    <ul>
+      <li>Name, email address, and role of each User;</li>
+      <li>Organisation name, branch details, and subscription information.</li>
+    </ul>
+    <h3>2.2 Operational Data</h3>
+    <ul>
+      <li>Inventory records (drug names, quantities, expiry dates, costs);</li>
+      <li>Sales transactions and receipts;</li>
+      <li>Purchase orders and supplier information;</li>
+      <li>Staff shift records;</li>
+      <li>Return and refund records.</li>
+    </ul>
+    <h3>2.3 Patient Data (entered by pharmacy staff)</h3>
+    <ul>
+      <li>Customer names and loyalty records (where used);</li>
+      <li>Prescription references and dispensing records;</li>
+      <li>Insurance claim information (where applicable).</li>
+    </ul>
+    <p>We do not directly collect patient data — it is entered by pharmacy staff using the Platform. Clients are responsible for obtaining appropriate consent from patients and for the accuracy of data entered.</p>
+    <h3>2.4 Technical Data</h3>
+    <ul>
+      <li>Authentication tokens and session data;</li>
+      <li>Browser type and device information (collected by Supabase Auth and Cloudflare);</li>
+      <li>Audit log entries (user actions, timestamps).</li>
+    </ul>
+
+    <h2>3. How We Use Data</h2>
+    <p>We use collected data solely to:</p>
+    <ul>
+      <li>Provide, operate, and improve the Platform;</li>
+      <li>Authenticate users and maintain session security;</li>
+      <li>Generate reports and analytics visible only to the relevant Client;</li>
+      <li>Communicate with Clients about their subscription and platform updates;</li>
+      <li>Investigate and resolve support issues.</li>
+    </ul>
+    <p>We do not sell, rent, or share Client Data or patient data with third parties for marketing or commercial purposes.</p>
+
+    <h2>4. Data Storage and Infrastructure</h2>
+    <p>The Platform is built on <strong>Supabase</strong> (database and authentication) hosted on AWS infrastructure, and <strong>Netlify</strong> (frontend hosting). Data is stored in encrypted databases. Data at rest and in transit is encrypted using industry-standard protocols (TLS/SSL, AES-256).</p>
+    <p>Clients should be aware that data may be stored on servers located outside their home country. Where this is a concern under local regulations, Clients should consult their legal counsel before using the Platform.</p>
+
+    <h2>5. Data Retention</h2>
+    <ul>
+      <li>Active accounts: data is retained for as long as the subscription is active;</li>
+      <li>After subscription cancellation: data is retained for 30 days to allow export, then permanently deleted;</li>
+      <li>Audit logs: retained for 12 months for security and compliance purposes.</li>
+    </ul>
+
+    <h2>6. Security Measures</h2>
+    <p>We implement the following security controls:</p>
+    <ul>
+      <li>Row-Level Security (RLS) — each Client's data is isolated at the database level and is inaccessible to other Clients;</li>
+      <li>Role-based access control — staff see only the data their role permits;</li>
+      <li>Optional Two-Factor Authentication (2FA) for all user accounts;</li>
+      <li>Automatic session timeout after 10 minutes of inactivity;</li>
+      <li>Cloudflare Turnstile bot protection on the login screen;</li>
+      <li>Encrypted connections (HTTPS) for all data in transit.</li>
+    </ul>
+    <p>No system is completely immune to security threats. Clients are encouraged to enable 2FA, use strong passwords, and train staff on safe credential handling.</p>
+
+    <h2>7. Your Rights</h2>
+    <p>Depending on applicable law in your jurisdiction, you may have the right to:</p>
+    <ul>
+      <li>Access the personal data held about you;</li>
+      <li>Request correction of inaccurate data;</li>
+      <li>Request deletion of your data;</li>
+      <li>Export your data in a portable format;</li>
+      <li>Object to or restrict certain processing.</li>
+    </ul>
+    <p>To exercise these rights, contact the Provider through the channel used at onboarding. We will respond within a reasonable timeframe.</p>
+
+    <h2>8. Third-Party Services</h2>
+    <p>The Platform integrates the following third-party services, each with their own privacy policies:</p>
+    <ul>
+      <li><strong>Supabase</strong> — database, authentication, and real-time infrastructure (<a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a>);</li>
+      <li><strong>Netlify</strong> — frontend hosting (<a href="https://www.netlify.com/privacy/" target="_blank">netlify.com/privacy</a>);</li>
+      <li><strong>Cloudflare</strong> — bot protection via Turnstile (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank">cloudflare.com/privacypolicy</a>).</li>
+    </ul>
+
+    <h2>9. Children's Data</h2>
+    <p>The Platform is not intended for direct use by individuals under 18. Patient records for minors may be entered by pharmacy staff in the course of legitimate dispensing activities. Such data must be handled in accordance with applicable child data protection laws in the Client's jurisdiction.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy periodically. Clients will be notified of material changes. The "Last updated" date at the top of this page reflects the most recent revision.</p>
+
+    <h2>11. Contact</h2>
+    <p>For privacy-related questions or to exercise your data rights, please contact the platform provider through the communication channel established at onboarding.</p>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <strong>Pharmacy Management System</strong> &nbsp;·&nbsp; These documents govern use of the platform worldwide. &nbsp;·&nbsp; Effective 25 June 2026
+</footer>
+
+<script>
+  function showDoc(id, btn) {
+    document.querySelectorAll('.doc').forEach(d => d.classList.remove('visible'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('doc-' + id).classList.add('visible');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
